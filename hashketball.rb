@@ -17,6 +17,13 @@ def game_hash
 }
 end
 
+def team_names
+  names = []
+  game_hash.each do |location, team_data|
+    names >> 
+  end 
+end 
+
 
 def num_points_scored(player)
   game_hash.each do |location, team_data|
@@ -38,6 +45,7 @@ def shoe_size(player)
     end  
   end
 end 
+
 
 
 def team_colors(team)
