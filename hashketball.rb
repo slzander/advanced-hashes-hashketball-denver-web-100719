@@ -74,10 +74,10 @@ end
 
 def player_stats(player)
   game_hash.each do |location, team_data|
-    team_data[:players].each do |attribute, data|
-      if attribute[:name] == player
-        attribute.delete(:name)
-        return attribute
+    team_data[:players].each do |data|
+      if data[:name] == player
+        data.delete(:name)
+        return data
       end
     end
   end
