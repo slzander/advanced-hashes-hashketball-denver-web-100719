@@ -18,9 +18,6 @@ def game_hash
 end
 
 
-def 
-
-
 def num_points_scored(player)
   game_hash.each do |location, team_data|
     team_data[:players].each do |data|
