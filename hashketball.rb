@@ -20,7 +20,7 @@ end
 def team_names
   names = []
   game_hash.each do |location, team_data|
-    names >> 
+    names << team_data[:team_name]
   end 
 end 
 
