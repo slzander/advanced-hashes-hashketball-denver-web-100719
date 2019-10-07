@@ -17,12 +17,8 @@ def game_hash
 }
 end
 
-def team_names
-  names = []
-  game_hash.each do |location, team_data|
-    names << team_data[:team_name]
-  end 
-end 
+
+def 
 
 
 def num_points_scored(player)
