@@ -1,7 +1,7 @@
 require "pry"
 
 def game_hash
- hash = {:home => {:team_name => "Brooklyn Nets", :colors => ["Black", "White"], :players => [
+   {:home => {:team_name => "Brooklyn Nets", :colors => ["Black", "White"], :players => [
    {:name => "Alan Anderson", :number => 0, :shoe => 16, :points => 22, :rebounds => 12, :assists => 12, :steals => 3, :blocks => 1, :slam_dunks => 1}, 
    {:name => "Reggie Evans", :number => 30, :shoe => 14, :points => 12, :rebounds => 12, :assists => 12, :steals => 12, :blocks => 12, :slam_dunks => 7}, 
    {:name => "Brook Lopez", :number => 11, :shoe => 17, :points => 17, :rebounds => 19, :assists => 10, :steals => 3, :blocks => 1, :slam_dunks => 15},
@@ -16,16 +16,6 @@ def game_hash
      ]}
 }
 end
-
-def good_practices
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, data|
-      #data.each do |data_item|
-      #end
-    end
-  end
-end
-
 
 
 def num_points_scored(player)
@@ -50,6 +40,7 @@ def shoe_size(player)
 end 
 
 
+
 def team_colors(team)
   game_hash.each do |location, team_data|
     if team == team_data[:team_name]
@@ -72,8 +63,8 @@ def player_numbers(team)
   jerseys = []
   game_hash.each do |location, team_data|
     if team_data[:team_name] == team
-      team_data[:players].each do |attribute, data|
-        jerseys << attribute[:number]
+      team_data[:players].each do |data|
+        jerseys << data[:number]
       end
     end
   end
@@ -83,10 +74,10 @@ end
 
 def player_stats(player)
   game_hash.each do |location, team_data|
-    team_data[:players].each do |attribute, data|
-      if attribute[:name] == player
-        attribute.delete(:name)
-        return attribute
+    team_data[:players].each do |data|
+      if data[:name] == player
+        data.delete(:name)
+        return data
       end
     end
   end
@@ -142,7 +133,7 @@ end
 
 
 def player_with_longest_name
-  longest_name_player = 
+  longest_name_player = ""
   longest_name_length = 0 
   game_hash.each do |location, team_info|
     team_info[:players].each do |data|
@@ -169,8 +160,6 @@ def long_name_steals_a_ton?
   end
   if most_steals_player == player_with_longest_name
     return TRUE
-  else
-    return FALSE
   end
 end
 
